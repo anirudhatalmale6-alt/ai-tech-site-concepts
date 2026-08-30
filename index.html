@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI/Tech WordPress site — three design concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF8;--ink:#16181C;--ink-60:rgba(22,24,28,.62);--ink-38:rgba(22,24,28,.40);--line:rgba(22,24,28,.14);--accent:#1B4A3B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:'Newsreader',serif;font-weight:400;letter-spacing:-.02em;line-height:1.1}
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-38)}
+a{color:inherit}
+
+header{padding:76px 0 48px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(38px,5vw,62px);max-width:20ch;margin:16px 0 18px}
+header p{color:var(--ink-60);max-width:62ch}
+
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(27px,3.2vw,38px);margin:12px 0 10px}
+section>.wrap>p.lead{color:var(--ink-60);max-width:62ch;margin-bottom:36px}
+
+/* sitemap */
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pg{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+.pg .t{padding:12px 14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.pg .t span{color:var(--ink-38);font-weight:500;font-size:11.5px;letter-spacing:.1em}
+.pg .b{padding:14px}
+.blk{background:#EDEDE8;border-radius:4px;margin-bottom:7px}
+.blk.h{height:34px;background:#DCDCD5}
+.blk.r{height:9px}
+.blk.r.s{width:62%}
+.blk.two{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:none}
+.blk.two i{display:block;height:30px;background:#EDEDE8;border-radius:4px}
+.blk.acc{background:#CBDDD3;height:18px;width:46%}
+.pg .n{font-size:12.5px;color:var(--ink-60);padding:0 14px 14px;line-height:1.5}
+
+/* palettes */
+.pal{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.sw{display:flex;height:78px}
+.sw i{flex:1}
+.pcard .body{padding:18px 20px 22px}
+.pcard h3{font-size:21px;margin-bottom:6px}
+.pcard .body p{font-size:14.5px;color:var(--ink-60)}
+.hex{margin-top:12px;font-size:11.5px;letter-spacing:.06em;color:var(--ink-38);font-weight:600}
+
+/* concepts */
+.cpt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:8px}
+.cc{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.cc .thumb{aspect-ratio:16/10;background-size:cover;background-position:top center;border-bottom:1px solid var(--line)}
+.cc .body{padding:20px;flex:1;display:flex;flex-direction:column}
+.cc h3{font-size:22px}
+.cc .sub{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-38);font-weight:700;margin-bottom:8px}
+.cc p{font-size:14.5px;color:var(--ink-60);flex:1;margin-bottom:16px}
+.btn{display:inline-block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;padding:11px 18px;border-radius:8px;font-weight:600;font-size:14.5px;transition:opacity .2s}
+.btn:hover{opacity:.86}
+
+ul.notes{list-style:none;max-width:66ch}
+ul.notes li{padding:9px 0 9px 22px;position:relative;color:var(--ink-60);border-bottom:1px solid var(--line)}
+ul.notes li::before{content:'';position:absolute;left:0;top:19px;width:10px;height:1px;background:var(--accent)}
+ul.notes b{color:var(--ink);font-weight:700}
+
+footer{padding:40px 0 60px;color:var(--ink-38);font-size:14px}
+@media(max-width:860px){
+  .map,.pal,.cpt{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <span class="kicker">Design concepts · Round 1</span>
+  <h1>Three directions for the site — pick one, or mix.</h1>
+  <p>Same four-page structure and the same content slots in all three, so the choice is purely about how it should feel. Everything below is real HTML/CSS running in your browser, not a flat image — resize the window or open it on your phone to see the responsive behaviour. Brand name and copy are placeholders.</p>
+</div></header>
+
+<section><div class="wrap">
+  <span class="kicker">01 — Structure</span>
+  <h2>The four pages</h2>
+  <p class="lead">Wireframe level: what goes on each page and in what order. Nothing here is locked — this is the part I'd like your notes on first.</p>
+  <div class="map">
+    <div class="pg">
+      <div class="t">Home <span>01</span></div>
+      <div class="b">
+        <div class="blk h"></div><div class="blk r"></div><div class="blk r s"></div>
+        <div class="blk acc"></div><div class="blk two"><i></i><i></i></div><div class="blk two"><i></i><i></i></div>
+        <div class="blk r"></div><div class="blk acc"></div>
+      </div>
+      <div class="n">Hero → proof strip → four services → about teaser → contact CTA.</div>
+    </div>
+    <div class="pg">
+      <div class="t">Services <span>02</span></div>
+      <div class="b">
+        <div class="blk h"></div><div class="blk r"></div>
+        <div class="blk two"><i></i><i></i></div><div class="blk two"><i></i><i></i></div>
+        <div class="blk r"></div><div class="blk r s"></div><div class="blk acc"></div>
+      </div>
+      <div class="n">Overview plus one repeatable block per service — add a fifth later without a redesign.</div>
+    </div>
+    <div class="pg">
+      <div class="t">About <span>03</span></div>
+      <div class="b">
+        <div class="blk h"></div><div class="blk r"></div><div class="blk r s"></div>
+        <div class="blk two"><i></i><i></i></div><div class="blk r"></div><div class="blk acc"></div>
+      </div>
+      <div class="n">Story, principles, team grid, and how you work. Photos optional.</div>
+    </div>
+    <div class="pg">
+      <div class="t">Contact <span>04</span></div>
+      <div class="b">
+        <div class="blk h"></div><div class="blk r"></div>
+        <div class="blk r"></div><div class="blk r"></div><div class="blk r"></div>
+        <div class="blk acc"></div>
+      </div>
+      <div class="n">Short form + direct details. Entries emailed and stored in WordPress.</div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">02 — Concepts</span>
+  <h2>Three live homepages</h2>
+  <p class="lead">Each one is a different point of view on the same brief. Open them full-screen; they're clickable and responsive.</p>
+  <div class="cpt">
+    <div class="cc">
+      <div class="thumb" style="background-image:url(shots/a-thumb.png)"></div>
+      <div class="body">
+        <div class="sub">Concept A</div><h3>Signal</h3>
+        <p>Dark, editorial and confident. Serif headlines against a deep ink field with a single warm amber accent — reads senior and considered rather than startup-y.</p>
+        <a class="btn" href="a-signal.html">Open Concept A</a>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="thumb" style="background-image:url(shots/b-thumb.png)"></div>
+      <div class="body">
+        <div class="sub">Concept B</div><h3>Lattice</h3>
+        <p>Light, technical and precise. A visible grid, monospaced labels and hard edges — the engineering-led option. Fastest of the three to load.</p>
+        <a class="btn" href="b-lattice.html">Open Concept B</a>
+      </div>
+    </div>
+    <div class="cc">
+      <div class="thumb" style="background-image:url(shots/c-thumb.png)"></div>
+      <div class="body">
+        <div class="sub">Concept C</div><h3>Aperture</h3>
+        <p>Warm, human and approachable. Soft cream, rounded cards and a deep forest green with a lime highlight — the most consultative of the three.</p>
+        <a class="btn" href="c-aperture.html">Open Concept C</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">03 — Palettes</span>
+  <h2>Colour options</h2>
+  <p class="lead">These are the palettes behind the three concepts. They're not welded to the layouts — any palette can be dropped onto any concept if you like one direction's structure and another's colour.</p>
+  <div class="pal">
+    <div class="pcard">
+      <div class="sw"><i style="background:#0B0E14"></i><i style="background:#11151E"></i><i style="background:#E4A11B"></i><i style="background:#E9E2D6"></i><i style="background:#7F8AA3"></i></div>
+      <div class="body"><h3>Ink &amp; Amber</h3><p>Near-black base, warm signal accent, bone-white text. High contrast, low noise, ages well.</p>
+      <div class="hex">#0B0E14 · #11151E · #E4A11B · #E9E2D6 · #7F8AA3</div></div>
+    </div>
+    <div class="pcard">
+      <div class="sw"><i style="background:#F3F2ED"></i><i style="background:#13161A"></i><i style="background:#2039E8"></i><i style="background:#C4522F"></i><i style="background:#DDE2FF"></i></div>
+      <div class="body"><h3>Paper &amp; Electric Blue</h3><p>Warm off-white with a saturated blue for links and actions, plus a clay red for emphasis.</p>
+      <div class="hex">#F3F2ED · #13161A · #2039E8 · #C4522F · #DDE2FF</div></div>
+    </div>
+    <div class="pcard">
+      <div class="sw"><i style="background:#FBF7F0"></i><i style="background:#12352B"></i><i style="background:#C6F24E"></i><i style="background:#E9603C"></i><i style="background:#F3EDE2"></i></div>
+      <div class="body"><h3>Forest &amp; Lime</h3><p>Deep green with a bright citrus highlight on cream. Friendly without being childish.</p>
+      <div class="hex">#FBF7F0 · #12352B · #C6F24E · #E9603C · #F3EDE2</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">04 — Build notes</span>
+  <h2>How I'd build it</h2>
+  <ul class="notes">
+    <li><b>Gutenberg blocks on a lightweight block theme</b> — no Elementor. Fewer scripts, faster pages, and editing looks like the live site. Happy to switch to Elementor if your team already knows it; just say so.</li>
+    <li><b>Every section on this page is an editable block.</b> Headings, body copy, service cards, logos and images all change from the WordPress editor — no code, no developer.</li>
+    <li><b>Responsive from the start.</b> The concepts above already adapt down to phone width; try them on your mobile.</li>
+    <li><b>SEO-ready</b> — clean heading order, meta titles/descriptions per page, XML sitemap, schema for the organisation, and fast Core Web Vitals from the low script count.</li>
+    <li><b>Contact form</b> with spam protection, an autoresponder, and every submission stored in the dashboard as well as emailed.</li>
+    <li><b>Documentation</b> at handover: theme and plugin list, how to edit each page type, how to add a service, and how to change the navigation.</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">Round 1 concepts · placeholder brand and copy throughout · no real client logos or statistics are shown.</div></footer>
+
+</body>
+</html>

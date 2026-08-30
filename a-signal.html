@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept A — Signal | AI/Tech site concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E14;
+  --ink-2:#11151E;
+  --line:rgba(233,226,214,.14);
+  --paper:#E9E2D6;
+  --paper-dim:rgba(233,226,214,.62);
+  --amber:#E4A11B;
+  --amber-soft:rgba(228,161,27,.14);
+  --mist:#7F8AA3;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Archivo',sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+.mono{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:600}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,14,20,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:baseline;gap:10px;font-family:'Instrument Serif',serif;font-size:25px;letter-spacing:-.01em}
+.logo b{font-weight:400}
+.logo i{font-style:italic;color:var(--amber)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{color:var(--paper-dim);text-decoration:none;font-size:15px;transition:color .25s}
+.nav-links a:hover{color:var(--paper)}
+.btn{
+  display:inline-block;border:1px solid var(--amber);color:var(--amber);
+  padding:11px 22px;border-radius:2px;text-decoration:none;font-size:14px;font-weight:500;
+  transition:background .3s,color .3s;
+}
+.btn:hover{background:var(--amber);color:var(--ink)}
+.btn-solid{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.btn-solid:hover{background:transparent;color:var(--amber)}
+.nav-links a.btn{color:var(--amber)}
+.nav-links a.btn:hover{color:var(--ink)}
+
+/* ---------- hero ---------- */
+header{position:relative;padding:110px 0 96px;overflow:hidden}
+.orbit{
+  position:absolute;right:-190px;top:-120px;width:760px;height:760px;border-radius:50%;
+  background:radial-gradient(circle at 32% 32%,rgba(228,161,27,.20),rgba(228,161,27,.03) 45%,transparent 66%);
+  filter:blur(6px);
+}
+.rings{position:absolute;right:-160px;top:-90px;width:700px;height:700px;opacity:.5}
+.rings circle{fill:none;stroke:var(--line)}
+.hero-grid{position:relative;z-index:3;display:grid;grid-template-columns:1.35fr .8fr;gap:70px;align-items:end}
+.eyebrow{color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.eyebrow::before{content:'';width:44px;height:1px;background:var(--amber)}
+h1{
+  font-family:'Instrument Serif',serif;font-weight:400;
+  font-size:clamp(52px,6.6vw,92px);line-height:1.02;letter-spacing:-.022em;
+}
+h1 em{font-style:italic;color:var(--amber)}
+.hero-sub{margin-top:30px;max-width:34ch;color:var(--paper-dim);font-size:19px}
+.hero-cta{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-side{border-left:1px solid var(--line);padding-left:34px;padding-bottom:8px}
+.hero-side p{color:var(--paper-dim);font-size:15px;margin-top:14px}
+.hero-side .mono{color:var(--mist)}
+.stat-slot{margin-top:26px;border:1px dashed var(--line);border-radius:3px;padding:16px 18px}
+.stat-slot .num{font-family:'Instrument Serif',serif;font-size:38px;line-height:1;color:var(--amber)}
+.stat-slot .lbl{color:var(--mist);margin-top:6px}
+
+/* ---------- ticker ---------- */
+.ticker{border-block:1px solid var(--line);padding:20px 0;background:var(--ink-2)}
+.ticker-in{display:flex;gap:56px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ticker .mono{color:var(--mist)}
+.slot{border:1px dashed var(--line);color:var(--mist);padding:9px 20px;border-radius:2px;font-size:12px;letter-spacing:.1em}
+
+/* ---------- services ---------- */
+section{padding:104px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px}
+.sec-head h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.sec-head p{color:var(--paper-dim);max-width:38ch;font-size:16px}
+.svc{border-top:1px solid var(--line)}
+.svc-row{
+  display:grid;grid-template-columns:64px 1.1fr 1.4fr auto;gap:34px;align-items:start;
+  padding:34px 0;border-bottom:1px solid var(--line);
+  transition:background .35s,padding-left .35s;position:relative;
+}
+.svc-row:hover{background:linear-gradient(90deg,var(--amber-soft),transparent 62%);padding-left:16px}
+.svc-row .idx{font-family:'Archivo Narrow',sans-serif;color:var(--amber);font-size:13px;letter-spacing:.16em;padding-top:7px}
+.svc-row h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:29px;letter-spacing:-.01em;line-height:1.2}
+.svc-row p{color:var(--paper-dim);font-size:16px}
+.svc-row .arrow{color:var(--paper-dim);font-size:22px;transition:transform .35s,color .35s;padding-top:4px}
+.svc-row:hover .arrow{transform:translateX(8px);color:var(--amber)}
+
+/* ---------- band ---------- */
+.band{background:var(--ink-2);border-block:1px solid var(--line)}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.band-grid h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1.12;letter-spacing:-.02em;margin-bottom:22px}
+.band-grid p{color:var(--paper-dim);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{border:1px solid var(--line);border-radius:100px;padding:7px 15px;font-size:13px;color:var(--paper-dim)}
+.frame{aspect-ratio:4/3.2;border:1px solid var(--line);border-radius:3px;position:relative;overflow:hidden;background:
+  linear-gradient(180deg,rgba(228,161,27,.06),transparent 60%),var(--ink)}
+.frame .grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.55}
+.frame .node{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 6px var(--amber-soft)}
+.frame svg{position:absolute;inset:0;width:100%;height:100%}
+.frame svg path{fill:none;stroke:var(--amber);stroke-width:1;opacity:.55}
+.frame-tag{position:absolute;left:18px;bottom:16px;color:var(--mist)}
+
+/* ---------- contact ---------- */
+.cta{text-align:center;padding:120px 0}
+.cta h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5.4vw,74px);line-height:1.04;letter-spacing:-.02em}
+.cta h2 em{font-style:italic;color:var(--amber)}
+.cta p{color:var(--paper-dim);max-width:46ch;margin:24px auto 0}
+.cta .hero-cta{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:44px 0;color:var(--mist);font-size:14px}
+.foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+
+@media(max-width:900px){
+  .wrap{padding:0 24px}
+  .nav-links a:not(.btn){display:none}
+  .hero-grid,.band-grid{grid-template-columns:1fr;gap:44px}
+  .hero-side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:26px}
+  .svc-row{grid-template-columns:40px 1fr;gap:16px}
+  .svc-row p{grid-column:2}
+  .svc-row .arrow{display:none}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:18px}
+  section{padding:72px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <div class="logo"><b>Northbeam</b><i>ai</i></div>
+  <div class="nav-links">
+    <a href="#">Services</a><a href="#">About</a><a href="#">Insights</a>
+    <a href="#" class="btn">Book a call</a>
+  </div>
+</div></nav>
+
+<header>
+  <div class="orbit"></div>
+  <svg class="rings" viewBox="0 0 700 700"><circle cx="350" cy="350" r="349"/><circle cx="350" cy="350" r="268"/><circle cx="350" cy="350" r="187"/><circle cx="350" cy="350" r="106"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono">Applied AI &nbsp;/&nbsp; Built for production</div>
+      <h1>We turn your data into decisions that <em>hold up</em>.</h1>
+      <p class="hero-sub">A small senior team shipping practical AI systems — not pilots that stall at the demo.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-solid">Start a conversation</a>
+        <a href="#" class="btn">See what we do</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="mono">Where we help</div>
+      <p>Discovery, model selection, evaluation, and the unglamorous integration work that makes it real.</p>
+      <div class="stat-slot">
+        <div class="num">[ 00 ]</div>
+        <div class="lbl mono">Your headline number here</div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<div class="ticker"><div class="wrap ticker-in">
+  <span class="mono">Trusted by teams at</span>
+  <span class="slot">CLIENT LOGO</span><span class="slot">CLIENT LOGO</span>
+  <span class="slot">CLIENT LOGO</span><span class="slot">CLIENT LOGO</span>
+</div></div>
+
+<section><div class="wrap">
+  <div class="sec-head">
+    <h2>Four ways we get you from idea to running system.</h2>
+    <p>Each service is its own page in the site structure, so you can add, reorder or retire one without touching the design.</p>
+  </div>
+  <div class="svc">
+    <div class="svc-row"><div class="idx">01</div><h3>AI Strategy &amp; Discovery</h3><p>We map where a model actually earns its keep, and where a spreadsheet is still the right answer.</p><div class="arrow">&rarr;</div></div>
+    <div class="svc-row"><div class="idx">02</div><h3>Custom Model Development</h3><p>Fine-tuning, retrieval and evaluation pipelines built around your own data and your own definition of correct.</p><div class="arrow">&rarr;</div></div>
+    <div class="svc-row"><div class="idx">03</div><h3>Integration &amp; Automation</h3><p>Connecting the model to the tools your team already lives in, with the guardrails and logging to match.</p><div class="arrow">&rarr;</div></div>
+    <div class="svc-row"><div class="idx">04</div><h3>Advisory &amp; Enablement</h3><p>Workshops and hands-on support so your people can maintain and extend what we build together.</p><div class="arrow">&rarr;</div></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap band-grid">
+  <div>
+    <div class="eyebrow mono">About</div>
+    <h2>Small on purpose. Senior by default.</h2>
+    <p>No account layer, no handoffs. The people you meet in the first call are the people who write the code and stay on after launch.</p>
+    <p>This block is where your company background goes — history, team, principles, whatever you want to lead with.</p>
+    <div class="chips"><span class="chip">Applied research</span><span class="chip">MLOps</span><span class="chip">Data engineering</span><span class="chip">Evaluation</span><span class="chip">Governance</span></div>
+  </div>
+  <div class="frame">
+    <div class="grid-lines"></div>
+    <svg viewBox="0 0 400 320" preserveAspectRatio="none"><path d="M60 250 C 130 250, 130 90, 205 90 S 300 190, 345 120"/><path d="M60 250 C 140 250, 170 175, 205 90"/><path d="M205 90 C 250 60, 300 70, 345 120"/></svg>
+    <div class="node" style="left:56px;top:244px"></div>
+    <div class="node" style="left:50%;top:82px"></div>
+    <div class="node" style="right:52px;top:112px"></div>
+    <div class="frame-tag mono">Photography or diagram slot</div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <h2>Tell us what you're trying to <em>figure out</em>.</h2>
+  <p>The contact page is a short form — name, company, what you're working on. It lands in your inbox and in the WordPress dashboard.</p>
+  <div class="hero-cta"><a href="#" class="btn btn-solid">Contact us</a></div>
+</div></section>
+
+<footer><div class="wrap foot-in">
+  <div class="logo" style="font-size:20px"><b>Northbeam</b><i>ai</i></div>
+  <div class="mono">Concept A — “Signal” &nbsp;·&nbsp; placeholder brand &amp; copy</div>
+</div></footer>
+
+</body>
+</html>
